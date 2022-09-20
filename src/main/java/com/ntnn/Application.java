@@ -4,28 +4,18 @@ import java.util.*;
 
 public class Application {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = 0;
-        while(true) {
-            n = Integer.parseInt(sc.nextLine());
-            Queue<Integer> deck = new LinkedList<>();
-            Queue<Integer> ans =new LinkedList<>();
-            if(n == 0) break;
-            for(int i=0; i<n; i++) {
-                deck.add(i+1);
+        int[] arr = {2, 3, 45, 5, 5, 56, 6, 72};
+        Arrays.sort(arr);
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (!map.containsKey(arr[i])) {
+                map.put(arr[i], 0);
+            } else {
+                map.put(arr[i], map.get(arr[i]) + 1);
             }
-            String res = "";
-            while (deck.size()>=2) {
-                ans.offer(deck.poll());
-                deck.offer(deck.poll());
-            }
-            while (ans.size()>0) {
-                res += ans.poll();
-                if (ans.size()>0) res += ", ";
-            }
-            System.out.println("Discarded cards: " + res);
-            System.out.println("Remaining card: " + deck.poll());
         }
+        map.forEach((k, v) -> {
+            if (v >= 1) System.out.println(k);
+        });
     }
-
 }
