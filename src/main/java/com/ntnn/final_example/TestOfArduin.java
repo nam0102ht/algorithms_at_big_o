@@ -1,5 +1,9 @@
 package com.ntnn.final_example;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class TestOfArduin {
     public static int binarySearch(int[] arr, int x) {
         int left = 0;
@@ -18,6 +22,7 @@ public class TestOfArduin {
     }
     public static void main(String[] args) {
         int[] arr = new int[] {4, 3, 6, 5, 8, 9, 12};
+        List<Integer> lst = Arrays.stream(arr).boxed().collect(Collectors.toList());
         int count = 0;
         for (int i = 0; i < arr.length-1; i++) {
             for (int j = i+1; j < arr.length; j++) {
