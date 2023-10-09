@@ -1,4 +1,4 @@
-package com.ntnn.design.pattern;
+package com.ntnn.design.pattern.creation;
 
 import java.util.HashMap;
 import java.util.List;

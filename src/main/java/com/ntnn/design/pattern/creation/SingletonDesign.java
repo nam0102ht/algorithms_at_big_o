@@ -1,4 +1,4 @@
-package com.ntnn.design.pattern;
+package com.ntnn.design.pattern.creation;
 
 public class SingletonDesign {
     static class TheRevenger {
