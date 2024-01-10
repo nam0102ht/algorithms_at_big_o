@@ -10,15 +10,18 @@ public class MakingJumps {
   static int[] drow = {-2, -1, 1, 2, 2, 1, -1, -2};
   static int[] dcol = {1, 2, 2, 1, -1, -2, -2, -1};
 
-  static void Start(int row, int col, int cnt) {
+  // matrix[r][c] = 2 is visited
+  // matrix[r][c] = 1 is belong to the chess and it is not visited
+
+  static void dfs(int row, int col, int cnt) {
     for (int i = 0; i < 8; i++) {
       int r = row + drow[i];
       int c = col + dcol[i];
 
       if (r >= 0 && r < n && c >= 0 && c < 10 && Matrix[r][c] == 1) {
         Matrix[r][c] = 2;
-        Start(r, c, cnt + 1);
-        Matrix[r][c] = 1;
+        dfs(r, c, cnt + 1);
+        Matrix[r][c] = 0;
       }
     }
 
@@ -48,7 +51,7 @@ public class MakingJumps {
       for (int i = 0; i < n; i++) {
         zero = scanner.nextInt();
         number = scanner.nextInt();
-        sum += number;
+        sum += number; // count total squares
 
         if (i == 0) {
           SR = 0;
@@ -56,12 +59,12 @@ public class MakingJumps {
         }
 
         for (int j = 0; j < number; j++) {
-          Matrix[i][j + zero] = 1;
+          Matrix[i][j + zero] = 0;
         }
       }
 
       Matrix[SR][SC] = 2;
-      Start(SR, SC, 1);
+      dfs(SR, SC, 1);
 
       Answer = sum - Answer;
 
