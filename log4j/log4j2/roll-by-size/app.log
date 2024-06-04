@@ -1,0 +1,12 @@
+2024-06-04 23:37:21 INFO The chapter 'init an order' has been started. The data good_order has been stored or calculated successfully
+2024-06-04 23:37:21 INFO The chapter 'booking a Fly' has been started. The data good_order has been stored or calculated successfully
+2024-06-04 23:37:21 INFO The chapter 'booking a Hotel' has been started. The data good_order has been stored or calculated successfully
+2024-06-04 23:37:21 INFO The chapter 'withdrawing Money' has been started. The data good_order has been stored or calculated successfully
+2024-06-04 23:37:21 INFO  the saga has been finished with FINISHED status
+2024-06-04 23:37:21 INFO The chapter 'init an order' has been started. The data bad_order has been stored or calculated successfully
+2024-06-04 23:37:21 INFO The chapter 'booking a Fly' has been started. The data bad_order has been stored or calculated successfully
+2024-06-04 23:37:21 INFO The chapter 'booking a Hotel' has been started. The data bad_order has been stored or calculated successfully
+2024-06-04 23:37:21 INFO The Rollback for a chapter 'booking a Hotel' has been started. The data bad_order has been rollbacked successfully
+2024-06-04 23:37:21 INFO The Rollback for a chapter 'booking a Fly' has been started. The data bad_order has been rollbacked successfully
+2024-06-04 23:37:21 INFO The Rollback for a chapter 'init an order' has been started. The data bad_order has been rollbacked successfully
+2024-06-04 23:37:21 INFO  the saga has been finished with ROLLBACKED status
