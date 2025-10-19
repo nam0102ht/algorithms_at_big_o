@@ -1,7 +1,9 @@
 package com.ntnn.dynamicprogramming;
 
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /*
 Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words.
@@ -28,21 +30,26 @@ Output: false
 
 * */
 public class WordBreak {
-    public boolean wordBreak(String s, List<String> wordDict) {
-        boolean[] dp = new boolean[s.length() + 1];
-        dp[s.length()] = true;
+    public static boolean wordBreak(String s, List<String> wordDict) {
+      Set<String> dict = new HashSet<>(wordDict);
+      boolean[] dp = new boolean[s.length() + 1];
+      dp[0] = true; // base case: empty string
 
-        for (int i = s.length() - 1; i >= 0 ; i--) {
-            for (String w : wordDict) {
-                if ((i + w.length()) <= s.length() && s.startsWith(w, i)) {
-                    dp[i] = dp[i + w.length()];
-                }
-                if (dp[i]) {
-                    break;
-                }
-            }
+      for (int i = 1; i <= s.length(); i++) {
+        for (int j = 0; j < i; j++) {
+          if (dp[j] && dict.contains(s.substring(j, i))) {
+            dp[i] = true;
+            break;
+          }
         }
+      }
 
-        return dp[0];
+      return dp[s.length()];
     }
+
+  public static void main(String[] args) {
+    String s = "catsandog";
+    List<String> wordDict = List.of("cats","dog","sand","and","cat");
+    System.out.println(wordBreak(s, wordDict));
+  }
 }
