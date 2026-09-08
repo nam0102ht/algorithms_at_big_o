@@ -3,7 +3,7 @@ package com.ntnn.amazon;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ClustersCount {
+public class ClustersCountConnectedComponents {
   /* You are given an m × n grid representing a data center.
 
     Each cell contains:
@@ -55,6 +55,19 @@ public class ClustersCount {
   }
 
   public static int countClusters(int[][] grid) {
+    /*
+    Scan grid
+        ↓
+    Find unvisited 1
+        ↓
+    New component → count++
+        ↓
+    BFS/DFS
+        ↓
+    Mark the ENTIRE component visited
+        ↓
+    Continue scanning
+    */
     int rows = grid.length;
     int cols = grid[0].length;
 
