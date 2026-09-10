@@ -52,6 +52,13 @@ public class HeapTopK {
   *         The heap should contain at most k elements because I only need the top k results.
   *         When the heap exceeds k, I remove the smallest-frequency element. This keeps only the best k candidates and reduces heap operations from O(log u) to O(log k)
   * 6. What are the time and space complexities?
+  * Top K LARGEST
+      ↓
+    MIN-HEAP of size K
+      ↓
+    Root = smallest of current Top K
+      ↓
+    Easy to discard the worst candidate
   * */
 
   public static void main(String[] args) {
