@@ -37,6 +37,23 @@ public class LongestSubstringWithoutRepeatingCharacters {
 //      4. When the window becomes invalid, what should left do?
 //      5. Would you use a HashSet or HashMap? Why?
 //      6. What are the optimized time and space complexities?
+//  Longest / shortest contiguous range
+//        +
+//  condition changes dynamically
+//        ↓
+//  Variable Sliding Window
+//
+//  right → expand
+//
+//  invalid?
+//      ↓
+//      while invalid:
+//  remove left
+//  left++
+//
+//  valid?
+//      ↓
+//  update answer
 
   public static void main(String[] args) {
     String s = "pwwkew";
