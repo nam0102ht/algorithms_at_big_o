@@ -14,6 +14,15 @@ public class CountDistinctElementsinEveryWindowofSizeK {
   * [2, 1, 3, 4] → 4 distinct
   * [1, 3, 4, 2] → 4 distinct
   * [3, 4, 2, 3] → 3 distinct
+  * Pattern:
+  * Fixed-size contiguous range
+  *  ↓
+  * SLIDING WINDOW
+  *      ↓
+  * Add incoming element (right)
+  * Remove outgoing element (left)
+  *      ↓
+  * Calculate answer
   * */
 
   public static void main(String[] args) {
