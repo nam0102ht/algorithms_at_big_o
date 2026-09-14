@@ -31,8 +31,7 @@ public class NetworkDelayTime {
     distance[k] = 0;
 
     // 3. Min-heap: {distance, node}
-    PriorityQueue<int[]> minHeap =
-        new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));
+    PriorityQueue<int[]> minHeap = new PriorityQueue<>(Comparator.comparingInt(a -> a[0]));
     minHeap.offer(new int[]{0, k});
 
     // 4. Dijkstra
