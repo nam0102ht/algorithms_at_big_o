@@ -10,6 +10,28 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class NetworkDelayTime {
+//  Weighted graph
+//    ↓
+//  Positive edge weights
+//    ↓
+//  Shortest path
+//    ↓
+//  Dijkstra
+//    ↓
+//  Adjacency List + Min-Heap
+//    ↓
+//  Relax edges
+// Unweighted shortest path
+// → BFS
+//
+//  Positive weighted shortest path
+// → Dijkstra
+//
+//  Negative edge weights
+// → Bellman-Ford
+//
+//  Dependencies / ordering
+// → Topological Sort
   public static void main(String[] args) {
     int[][] times = {{2, 1, 1}, {2, 3, 1}, {3, 4, 1}};
     int n = 4;
@@ -54,10 +76,7 @@ public class NetworkDelayTime {
         // Relaxation
         if (newDistance < distance[nextNode]) {
           distance[nextNode] = newDistance;
-          minHeap.offer(new int[]{
-              newDistance,
-              nextNode
-          });
+          minHeap.offer(new int[]{newDistance, nextNode});
         }
       }
     }
